@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Liquidação de Natal Tupperwars - Organização, saúde e praticidade para sua cozinha">
+<title>Tupperwars® | Liquidação de Natal</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* === ESTILO PROFISSIONAL GLOBAL === */
+:root{
+--primary:#c40000;
+--accent:#ffcc00;
+--bg:#f2f2f2;
+--white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Roboto,sans-serif;
+background:var(--bg);
+color:#222;
+}
+
+/* TOPO */
+.top-bar{
+background:#f5f5f5;
+padding:8px;
+font-size:12px;
+text-align:center
+}
+header{
+background:#fff;
+text-align:center;
+padding:25px;
+border-bottom:1px solid #ddd
+}
+header h1{color:var(--primary);font-size:32px}
+.promo-tag{
+background:var(--primary);
+color:#fff;
+padding:6px 12px;
+font-size:12px;
+display:inline-block;
+margin-bottom:10px
+}
+
+/* TIMER */
+.timer-strip{
+background:#8a0000;
+color:#fff;
+text-align:center;
+padding:12px;
+font-weight:bold
+}
+#countdown{color:var(--accent)}
+
+/* PRODUTO */
+.main{
+max-width:1200px;
+margin:30px auto;
+background:#fff;
+padding:30px;
+display:grid;
+grid-template-columns:420px 1fr;
+gap:30px
+}
+.main img{width:100%}
+
+/* GALERIA */
+.thumbs{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:8px;
+margin-top:10px
+}
+.thumbs img{
+border:1px solid #ccc;
+cursor:pointer
+}
+
+/* PREÇO */
+.price-box{
+border:2px solid #ffe58f;
+background:#fffbe6;
+padding:20px;
+margin:20px 0
+}
+.old del{color:#999}
+.new{
+color:var(--primary);
+font-family:Oswald;
+font-size:48px
+}
+
+/* BOTÃO */
+.buy-btn{
+background:linear-gradient(to right,#f57224,#f83600);
+color:#fff;
+padding:18px;
+border:none;
+width:100%;
+font-size:18px;
+font-weight:bold;
+cursor:pointer
+}
+
+/* FOOTER */
+footer{
+background:#333;
+color:#ccc;
+padding:30px;
+text-align:center;
+margin-top:40px
+}
+
+@media(max-width:900px){
+.main{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">🚚 Entrega Garantida • 🔒 Compra Segura</div>
+
+<header>
+<span class="promo-tag">🎄 LIQUIDAÇÃO DE NATAL</span>
+<h1>Tupperwars® Premium</h1>
+<p>Organização, saúde e praticidade para sua cozinha</p>
+</header>
+
+<div class="timer-strip">
+OFERTA TERMINA EM <span id="countdown">00:15:00</span>
+</div>
+
+<div class="main">
+<div>
+<img id="mainImg" src="1000005527.jpg">
+<div class="thumbs">
+<img onclick="troca('1000005527.jpg')" src="1000005527.jpg">
+<img onclick="troca('1000005526.jpg')" src="1000005526.jpg">
+<img onclick="troca('1000005524.jpg')" src="1000005524.jpg">
+<img onclick="troca('1000005523.jpg')" src="1000005523.jpg">
+<img onclick="troca('1000005522.jpg')" src="1000005522.jpg">
+</div>
+</div>
+
+<div>
+<h2>Conjunto Hermético Tupperwars® – 28 Peças</h2>
+
+<div class="price-box">
+<div class="old">De <del>R$189,99</del></div>
+<div class="new">R$ 89,99</div>
+<p>ou 12x de R$9,00</p>
+</div>
+
+<p>
+✔ Livre de BPA<br>
+✔ Micro-ondas, freezer e lava-louças<br>
+✔ Vedação total<br>
+✔ Organização perfeita
+</p>
+
+<button class="buy-btn" onclick="location.href='LINK_DO_SEU_CHECKOUT_AQUI'">
+COMPRAR AGORA
+</button>
+
+<p style="margin-top:10px;font-size:12px">
+🔒 Pagamento 100% seguro • Garantia de 30 dias
+</p>
+</div>
+</div>
+
+<footer>
+<p>© 2025 Tupperwars® • Todos os direitos reservados</p>
+<p>Visa • MasterCard • Pix • Boleto</p>
+</footer>
+
+<script>
+function troca(img){document.getElementById('mainImg').src=img}
+let t=900;
+setInterval(()=>{
+let m=String(Math.floor(t/60)).padStart(2,'0');
+let s=String(t%60).padStart(2,'0');
+document.getElementById('countdown').innerText=00:${m}:${s};
+t>0?t--:t=900;
+},1000);
+</script>
+
+</body>
+</html>
